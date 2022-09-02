@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:viewmodel="clr-namespace:MauiBugReport.ViewModels"
+             x:DataType = "viewmodel:MainPageViewModel"
+             x:Class="MauiBugReport.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Picker Title="Choose" SelectedItem="{Binding Status}">
+            <Picker.Items>
+                <x:String>"Load Html"</x:String>
+            </Picker.Items>
+        </Picker>
+    <WebView Grid.Row="1" Navigating="WebView_Navigating" Source="{Binding HtmlText}"/>
+    </Grid>
+
+</ContentPage>
